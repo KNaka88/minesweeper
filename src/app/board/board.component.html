@@ -1,0 +1,7 @@
+<table>
+  <tr *ngFor="let row of mineBoard; let r = index;" class={{r}}>
+      <td (click)='checkMine(r, c)' *ngFor="let col of row; let c =index;" id=r{{r}}-c{{c}} class='border'>
+        {{col.minesAdjacent}}
+      </td>
+  </tr>
+</table>
