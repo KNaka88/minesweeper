@@ -1,6 +1,6 @@
 <table>
   <tr *ngFor="let row of mineBoard; let r = index;" class={{r}}>
-      <td (click)='checkMine(r, c)' *ngFor="let col of row; let c =index;" id=r{{r}}-c{{c}} class='border'>
+      <td (contextmenu)='flag(r, c, $event)' (click)='checkMine(r, c)' *ngFor="let col of row; let c =index;" [class]="colorText(col)" class='border'>
         {{col.minesAdjacent}}
       </td>
   </tr>
